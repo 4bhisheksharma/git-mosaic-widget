@@ -77,19 +77,27 @@ class _GitHubConfigScreenState extends State<GitHubConfigScreen> {
               Icon(
                 success ? Icons.check_circle_rounded : Icons.info_outline_rounded,
                 color: success ? const Color(0xFF39D353) : Colors.orangeAccent,
+                size: 20,
               ),
-              const SizedBox(width: 10),
-              Text(
-                success
-                    ? 'Home widget updated successfully!'
-                    : 'Rendered preview. Add the widget to your home screen!',
+              const SizedBox(width: 12),
+              Expanded(
+                child: Text(
+                  success
+                      ? 'Home widget updated successfully!'
+                      : 'Rendered preview. Add the widget to your home screen!',
+                  style: const TextStyle(
+                    color: Color(0xFFF0F6FC),
+                    fontSize: 13.5,
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
               ),
             ],
           ),
-          backgroundColor: const Color(0xFF161B22),
+          backgroundColor: const Color(0xFF21262D),
           behavior: SnackBarBehavior.floating,
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10),
+            borderRadius: BorderRadius.circular(12),
             side: const BorderSide(color: Color(0xFF30363D)),
           ),
         ),

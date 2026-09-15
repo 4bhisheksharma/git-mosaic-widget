@@ -60,5 +60,45 @@ class AppTheme {
         ),
       ),
     ),
+    snackBarTheme: SnackBarThemeData(
+      backgroundColor: const Color(0xFF21262D),
+      contentTextStyle: const TextStyle(
+        color: Color(0xFFF0F6FC),
+        fontSize: 14,
+        fontWeight: FontWeight.w500,
+      ),
+      behavior: SnackBarBehavior.floating,
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+        side: const BorderSide(color: Color(0xFF30363D), width: 1),
+      ),
+    ),
+    dialogTheme: DialogThemeData(
+      backgroundColor: const Color(0xFF161B22),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(16),
+        side: const BorderSide(color: Color(0xFF30363D), width: 1),
+      ),
+      titleTextStyle: const TextStyle(
+        color: Color(0xFFF0F6FC),
+        fontSize: 18,
+        fontWeight: FontWeight.w600,
+      ),
+      contentTextStyle: const TextStyle(
+        color: Color(0xFFC9D1D9),
+        fontSize: 14,
+      ),
+    ),
+    popupMenuTheme: PopupMenuThemeData(
+      color: const Color(0xFF161B22),
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+        side: const BorderSide(color: Color(0xFF30363D), width: 1),
+      ),
+      textStyle: const TextStyle(
+        color: Color(0xFFF0F6FC),
+        fontSize: 14,
+      ),
+    ),
   );
 }
