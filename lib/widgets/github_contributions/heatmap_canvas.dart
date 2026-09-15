@@ -43,7 +43,7 @@ class HeatmapCanvas extends StatelessWidget {
       return customPaint;
     }
 
-    const dayLabels = ['Mon', '', 'Wed', '', 'Fri', '', ''];
+    const dayLabels = ['Sun', '', '', 'Wed', '', 'Fri', 'Sat'];
 
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -53,7 +53,7 @@ class HeatmapCanvas extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.end,
           children: List.generate(7, (index) {
-            final label = dayLabels[index];
+            final label = index < dayLabels.length ? dayLabels[index] : '';
             return Container(
               height: cellSize,
               margin: EdgeInsets.only(
@@ -110,13 +110,11 @@ class _HeatmapPainter extends CustomPainter {
 
     final now = DateTime.now();
     final today = DateTime(now.year, now.month, now.day);
-    // Find weekday offset (Monday = 1, Sunday = 7 in Dart)
-    final todayWeekday = today.weekday; // 1 = Mon, ..., 7 = Sun
+    // Sunday-based weekday offset: Sunday = 0, Monday = 1, ..., Saturday = 6
+    final todaySundayBased = today.weekday % 7;
 
-    // Calculate start date so the bottom of the last column is today
-    // Total cells = columnCount * 7
-    // Total days back = ((columnCount - 1) * 7) + (todayWeekday - 1)
-    final daysBack = ((columnCount - 1) * 7) + (todayWeekday - 1);
+    // Calculate start date so col 0, row 0 is Sunday, and the bottom of the last column ends on today
+    final daysBack = ((columnCount - 1) * 7) + todaySundayBased;
     final startDate = today.subtract(Duration(days: daysBack));
 
     var currentDate = startDate;
