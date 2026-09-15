@@ -1,4 +1,4 @@
-package app.widgets.anything
+package app.gitmosaic
 
 import io.flutter.embedding.android.FlutterActivity
 

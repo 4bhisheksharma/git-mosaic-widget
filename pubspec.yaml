@@ -1,7 +1,7 @@
 name: widgets
-description: "A new Flutter project."
+description: "GitMosaic - Beautiful GitHub contribution graph widgets for your home screen."
 publish_to: 'none'
-version: 0.1.0+1
+version: 0.1.1+1
 
 environment:
   sdk: ^3.13.3

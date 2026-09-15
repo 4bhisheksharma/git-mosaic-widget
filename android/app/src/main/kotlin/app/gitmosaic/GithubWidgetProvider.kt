@@ -1,4 +1,4 @@
-package app.widgets.anything
+package app.gitmosaic
 
 import android.appwidget.AppWidgetManager
 import android.content.Context

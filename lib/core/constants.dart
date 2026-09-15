@@ -1,5 +1,5 @@
 class WidgetConstants {
-  static const String appGroupId = 'group.app.widgets.anything';
+  static const String appGroupId = 'group.app.gitmosaic';
   
   // Widget identifiers
   static const String androidGithubWidgetProvider = 'GithubWidgetProvider';
