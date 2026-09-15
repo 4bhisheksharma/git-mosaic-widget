@@ -9,6 +9,7 @@ class HeatmapCanvas extends StatelessWidget {
   final double cellSize;
   final double spacing;
   final double borderRadius;
+  final bool showDayLabels;
 
   const HeatmapCanvas({
     super.key,
@@ -18,11 +19,12 @@ class HeatmapCanvas extends StatelessWidget {
     this.cellSize = 12.0,
     this.spacing = 3.0,
     this.borderRadius = 2.5,
+    this.showDayLabels = true,
   });
 
   @override
   Widget build(BuildContext context) {
-    return CustomPaint(
+    final customPaint = CustomPaint(
       size: Size(
         (columnCount * cellSize) + ((columnCount - 1) * spacing),
         (7 * cellSize) + (6 * spacing),
@@ -35,6 +37,44 @@ class HeatmapCanvas extends StatelessWidget {
         spacing: spacing,
         borderRadius: borderRadius,
       ),
+    );
+
+    if (!showDayLabels) {
+      return customPaint;
+    }
+
+    const dayLabels = ['Mon', '', 'Wed', '', 'Fri', '', ''];
+
+    return Row(
+      mainAxisSize: MainAxisSize.min,
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.end,
+          children: List.generate(7, (index) {
+            final label = dayLabels[index];
+            return Container(
+              height: cellSize,
+              margin: EdgeInsets.only(
+                bottom: index < 6 ? spacing : 0,
+                right: 5,
+              ),
+              alignment: Alignment.centerRight,
+              child: Text(
+                label,
+                style: const TextStyle(
+                  color: Color(0xFF7D8590),
+                  fontSize: 7.5,
+                  fontWeight: FontWeight.w500,
+                  height: 1.0,
+                ),
+              ),
+            );
+          }),
+        ),
+        customPaint,
+      ],
     );
   }
 }

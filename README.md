@@ -1,3 +1,3 @@
-# widgets
+# GitMosaic
 
-A new Flutter project.
+Clean, customizable GitHub contribution graph & streak widgets for your home screen, built with Flutter.

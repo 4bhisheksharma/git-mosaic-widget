@@ -118,10 +118,11 @@ class GitHubMediumWidgetView extends StatelessWidget {
             child: HeatmapCanvas(
               days: stats.days,
               palette: palette,
-              columnCount: 20,
+              columnCount: 19,
               cellSize: 10.5,
               spacing: 2.8,
               borderRadius: 2.0,
+              showDayLabels: true,
             ),
           ),
 

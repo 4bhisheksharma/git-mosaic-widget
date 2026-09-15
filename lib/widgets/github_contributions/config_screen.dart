@@ -13,7 +13,7 @@ class GitHubConfigScreen extends StatefulWidget {
 }
 
 class _GitHubConfigScreenState extends State<GitHubConfigScreen> {
-  final TextEditingController _usernameController = TextEditingController(text: 'torvalds');
+  final TextEditingController _usernameController = TextEditingController(text: '4bhisheksharma');
   ContributionPalette _selectedPalette = ContributionPalette.classicGreen;
   ContributionStats _stats = GitHubApi.generateSampleStats();
   bool _isLoading = false;
@@ -101,7 +101,7 @@ class _GitHubConfigScreenState extends State<GitHubConfigScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Anything Widgets'),
+        title: const Text('GitMosaic'),
       ),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(20),

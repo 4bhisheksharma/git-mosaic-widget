@@ -8,7 +8,7 @@ class MainApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Anything Widgets',
+      title: 'GitMosaic',
       debugShowCheckedModeBanner: false,
       theme: AppTheme.darkTheme,
       home: const GitHubConfigScreen(),
