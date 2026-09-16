@@ -17,7 +17,16 @@ if (keystorePropertiesFile.exists()) {
 android {
     namespace = "app.gitmosaic"
     compileSdk = flutter.compileSdkVersion
-    ndkVersion = flutter.ndkVersion
+    ndkVersion = "28.2.13676358"
+
+    packaging {
+        resources {
+            excludes += "/META-INF/{AL2.0,LGPL2.1}"
+        }
+        jniLibs {
+            keepDebugSymbols.add("**/*.so")
+        }
+    }
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17

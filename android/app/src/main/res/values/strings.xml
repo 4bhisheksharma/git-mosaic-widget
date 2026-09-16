@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">GitMosaic</string>
+    <string name="widget_name">GitMosaic Contributions</string>
+    <string name="widget_description">Displays your live GitHub contribution graph and current streak on your home screen.</string>
+</resources>

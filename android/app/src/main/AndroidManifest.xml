@@ -3,7 +3,7 @@
     <application
         android:label="GitMosaic"
         android:name="${applicationName}"
-        android:icon="@mipmap/launcher_icon">
+        android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -29,6 +29,8 @@
 
         <receiver
             android:name="app.gitmosaic.GithubWidgetProvider"
+            android:label="GitMosaic Contributions"
+            android:icon="@mipmap/ic_launcher"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
